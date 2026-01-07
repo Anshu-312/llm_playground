@@ -27,3 +27,7 @@ async def generate(req: GenerateRequest):
         import traceback
         print(traceback.format_exc())  # This prints the full error to your terminal
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/")
+async def home():
+    return {"Welcome to the LLM Playground API!"}    
